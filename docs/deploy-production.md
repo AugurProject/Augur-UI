@@ -9,7 +9,7 @@ These instructions are for users who want to run the Augur client to get access 
 
 ## Step by Step: Deploying Augur client locally
 
-Make sure Docker is installed. Get familar with docker [here](https://docs.docker.com/docker-hub/official_repos/).
+Make sure Docker is installed. Get familiar with docker [here](https://docs.docker.com/docker-hub/official_repos/).
 Also make sure git is installed and in your execution path.
 
 ### Prerequisites
@@ -29,7 +29,7 @@ Run the following command to bring up the newly-built Docker image and map port 
 
     docker run -p 8080:80 augurclient 
 
-Once the Docker continer is up and listening, you will see message `Now listening ...`. Go to http://localhost:8080 in your web browser.
+Once the Docker container is up and listening, you will see message `Now listening ...`. Go to http://localhost:8080 in your web browser.
 
 To stop the Docker container, run these commands in a different command prompt and look for the container id that is running augurclient image:
 
