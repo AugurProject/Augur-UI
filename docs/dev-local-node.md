@@ -40,13 +40,13 @@ There is a history of versions of populate node docker images based on the augur
 
 Since the contracts have already been deploy the contract address are know, the :core-####### docker image will match the version of augur-core that augur.js has a package dependency.
 
-If you are using a past version of the dev-pop-geth docker image you can get the contract addresses and upload block number with these commmands:
+If you are using a past version of the dev-pop-geth docker image you can get the contract addresses and upload block number with these commands:
     
     #run in augur.js root 
     docker run --rm --entrypoint cat augurproject/dev-pop-geth:core-####### /augur.js/src/contracts/addresses.json > ./src/contracts/addresses.json
     docker run --rm --entrypoint cat augurproject/dev-pop-geth:core-####### /augur.js/src/contracts/upload-block-numbers.json > ./src/contracts/upload-block-numbers.json
 
-where `core-######` is the version of the docker image ie. `core-0.13.0`. The above command puts the correct addresses so that augur-node and augur ui can use them when `yarn link augur.js` is used. See furthur down.
+where `core-######` is the version of the docker image ie. `core-0.13.0`. The above command puts the correct addresses so that augur-node and augur ui can use them when `yarn link augur.js` is used. See further down.
 
 
 ### blank chain geth node
@@ -71,14 +71,14 @@ NOTE -- intentionally mixing the use of `npm` and `yarn` because `npm link` has 
 
 ### augur-node
 
-We are going to use environment variables for convenience. ENDPOINT_HTTP and ENDPOINT_WS tell augur-node and augur.js scripts where to connect. Here we deploy smart contracts to our local node we started by the command above. The `npm explore augur.js -- npm run deploy:environment` does the deploy based on the environment variables. It will create/populate with markets and open orders. The ETHEREUM_PRIVATE_KEY specifies the market creater and owner of the open orders, the public address is 0x913da4198e6be1d5f5e4a40d0667f70c0b5430eb. Import this address into MetaMask to see the markets and open orders.
+We are going to use environment variables for convenience. ENDPOINT_HTTP and ENDPOINT_WS tell augur-node and augur.js scripts where to connect. Here we deploy smart contracts to our local node we started by the command above. The `npm explore augur.js -- npm run deploy:environment` does the deploy based on the environment variables. It will create/populate with markets and open orders. The ETHEREUM_PRIVATE_KEY specifies the market creator, crater, created, creates, create and owner of the open orders, the public address is 0x913da4198e6be1d5f5e4a40d0667f70c0b5430eb. Import this address into MetaMask to see the markets and open orders.
 
     cd augur-node
     npm install
     yarn link augur.js
 
     # All of these keys are optional, and have the defaults listed here
-    export USE_NORMAL_TIME="false"                # need to beable to change time manually
+    export USE_NORMAL_TIME="false"                # need to be able to change time manually
     export ETHEREUM_HOST="localhost"              # where the ethereum node is running
     export ETHEREUM_GAS_PRICE_IN_NANOETH="1"
     export ETHEREUM_HTTP=http://127.0.0.1:8545    # http endpoint scripts are going to use
@@ -92,7 +92,7 @@ We are going to use environment variables for convenience. ENDPOINT_HTTP and END
     # Use dp to deploy to the configuration specified in your local environment (above)
     npx dp deploy
 
-    # quick commmand to clean augur-node env and build and start
+    # quick command to clean augur-node env and build and start
     npm run clean-start
 
 ### augur (ui)
@@ -109,7 +109,7 @@ Start the augur development server:
 
 
 ## Log In With MetaMask
-If the MetaMask browser extension is installed, the correct network will need to be choosen. In the pull-down menu, select:
+If the MetaMask browser extension is installed, the correct network will need to be chosen. In the pull-down menu, select:
 
     localhost:8545
 
@@ -206,7 +206,7 @@ A few caveats about pushing time: `augur-node` maintains a state machine, so onc
     # shows if market has been reported on and gives details
     flash show-initial-reporter -m <market id>  
 
-    ** finialize market
+    ** finalize market
     # will push time so market can be finalized, needs initial report
     flash finalize-market -m <market id>  
 
