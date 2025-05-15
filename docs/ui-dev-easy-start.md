@@ -1,6 +1,6 @@
 # Augur | UI dev super easy Configuration
 
-This is for UI developers already familiar with the different components but only want to work with the UI. This guide relys on two docker images, populated ethereum node and augur-node dev. Augur-node dev docker image is built every time master branch is updated, for questions ping us in Augur #dev channel.
+This is for UI developers already familiar with the different components but only want to work with the UI. This guide relies on two docker images, populated ethereum node and augur-node dev. Augur-node dev docker image is built every time master branch is updated, for questions ping us in Augur #dev channel.
 
 ## Requirements
 
